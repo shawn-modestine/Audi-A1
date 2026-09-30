@@ -2,9 +2,29 @@
     { "hdr": "7E0", "type": "engine" }
   ],
   "commands": [
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2F"}, "freq": 5, "dbgfilter": { "to": 2014, "years": [2016, 2017, 2018, 2019, 2021], "from": 2024 },
+{ "hdr": "714", "rax": "77E", "cmd": {"22": "1014"}, "freq": 5,
   "signals": [
-    {"id": "A1_RANGE", "path": "Fuel.Generic", "fmt": { "len": 8, "max": 1000, "mul": 1000, "div": 255, "nullmin": 0, "unit": "kilometers" }, "name": "Range remaining", "suggestedMetric": "fuelRange"}
+    {"id": "A1_AAT", "path": "Climate", "fmt": { "len": 8, "max": 77.5, "min": -50, "div": 2, "add": -50, "unit": "celsius" }, "name": "Ambient air temperature (cluster)"}
+  ]},
+{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "202F"}, "freq": 5,
+  "signals": [
+    {"id": "A1_EOT", "path": "Engine", "fmt": { "len": 8, "max": 197, "min": -58, "add": -58, "nullmin": -58, "nullmax": 160, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"}
+  ]},
+{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "2203"}, "freq": 30,
+  "signals": [
+    {"id": "A1_ODO", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "714", "rax": "77E", "cmd": {"22": "2206"}, "freq": 30,
+  "signals": [
+    {"id": "A1_FLV", "path": "Fuel", "fmt": { "len": 8, "max": 255, "unit": "liters" }, "name": "Fuel remaining", "suggestedMetric": "fuelTankLevel"}
+  ]},
+{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "2294"}, "freq": 30,
+  "signals": [
+    {"id": "A1_RANGE", "path": "Trips", "fmt": { "len": 16, "max": 2000, "unit": "kilometers" }, "name": "Range remaining", "suggestedMetric": "fuelRange"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2F"}, "freq": 5,
+  "signals": [
+    {"id": "A1_FLI", "path": "Fuel", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel tank level", "suggestedMetric": "fuelTankLevel"}
   ]}
 ]
 }
