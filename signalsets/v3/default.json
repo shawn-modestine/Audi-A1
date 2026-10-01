@@ -10,9 +10,9 @@
   "signals": [
     {"id": "A1_EOT", "path": "Engine", "fmt": { "len": 8, "max": 197, "min": -58, "add": -58, "nullmin": -58, "nullmax": 160, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"}
   ]},
-{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "2203"}, "freq": 30,
+{ "hdr": "714", "rax": "77E", "cmd": {"22": "2203"}, "freq": 30,
   "signals": [
-    {"id": "A1_ODO", "path": "Trips", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "A1_ODO", "path": "Trips", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer", "description": "Instrument cluster odometer, 10 km resolution."}
   ]},
 { "hdr": "714", "rax": "77E", "cmd": {"22": "2206"}, "freq": 30,
   "signals": [
